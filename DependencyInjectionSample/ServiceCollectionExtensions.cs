@@ -1,9 +1,11 @@
 using System;
+using DependencyInjectionSample.Filters;
 using DependencyInjectionSample.HttpClients;
 using DependencyInjectionSample.Interfaces;
 using DependencyInjectionSample.Models;
 using DependencyInjectionSample.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 
 namespace DependencyInjectionSample
@@ -30,7 +32,7 @@ namespace DependencyInjectionSample
 
             // Try - All of the above have a "Try" version that only adds a mapping if one doesn't
             //       already exist
-            //services.TryAddSingleton<IOperationTransient, Operation>();
+            // services.TryAddSingleton<IOperationTransient, Operation>();
 
 
             // Concrete - You don't need to have an interface for IoC.  This is an example
@@ -43,7 +45,7 @@ namespace DependencyInjectionSample
 
             // All of the above examples include ctors that have no arguments or where the args
             // are populated with IoC.  The next two examples are showing how to explicitly define
-            // the instance/construction process.
+            // the instance/construction process. -- Connection string is a good example
 
             // The "Create the instance now" approach
             var provider = services.BuildServiceProvider();
@@ -88,7 +90,7 @@ namespace DependencyInjectionSample
             // Action Filters and three DI options - AddGuidHeader + ValuesController
             // services.AddSingleton<GuidGenerator>();
 
-            // services.AddScoped<AddGuidHeaderAttribute>();
+            //services.AddScoped<AddGuidHeaderAttribute>();
             // services.AddSingleton<AddGuidHeaderAttribute>();  // Look out for a gotcha with services.AddTransient<GuidGenerator>();
 
             return services;

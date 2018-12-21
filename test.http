@@ -7,4 +7,4 @@ content-type: application/json
 
 GET http://localhost:{{port}}/api/ip HTTP/1.1
 content-type: application/json
-X-RequestFreeGuid: yes, please
+#X-RequestFreeGuid: yes, please

@@ -12,12 +12,13 @@ namespace DependencyInjectionSample.Filters
 
     public class AddGuidHeaderAttribute : ResultFilterAttribute
     {
-        private const string _name = "X-Guid4U";
+        private readonly string _name;
         private readonly GuidGenerator _guidGenerator;
         private readonly Guid _instantGuid;
 
         public AddGuidHeaderAttribute(GuidGenerator guidGenerator)
         {
+            _name = "X-Guid4U";
             _guidGenerator = guidGenerator;
             _instantGuid = Guid.NewGuid();
         }
@@ -56,10 +57,10 @@ namespace DependencyInjectionSample.Filters
 
     //public class AddGuidHeaderAttribute : TypeFilterAttribute
     //{
-    //    // This is a receipe that can be used when you don't need to pass any parameters other than injected
+    //    // This is a recipe that can be used when you don't need to pass any parameters other than injected
     //    // parameters to the Attribute.  It's a variation of the above example.
 
-    //    public AddGuidHeaderAttribute():base(typeof(AddGuidHeaderAttributeImpl))
+    //    public AddGuidHeaderAttribute() : base(typeof(AddGuidHeaderAttributeImpl))
     //    {
 
     //    }
@@ -72,7 +73,7 @@ namespace DependencyInjectionSample.Filters
 
     //        public AddGuidHeaderAttributeImpl(GuidGenerator guidGenerator)
     //        {
-    //            _name = "X-YouGetAGuid"
+    //            _name = "X-YouGetAGuid";
     //            _guidGenerator = guidGenerator;
     //            _instantGuid = Guid.NewGuid();
     //        }
