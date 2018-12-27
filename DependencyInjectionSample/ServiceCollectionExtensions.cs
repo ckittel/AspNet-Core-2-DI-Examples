@@ -19,8 +19,8 @@ namespace DependencyInjectionSample
 
             // Singleton - The first time an IOperationSingleton is needed, a new on will be
             //             created.  Future needs will be handled by the same instance.  This
-            //             is a singleton for the life of the application.  This is where thread
-            //             safty really comes into play -- can be accessed across requests
+            //             is a singleton for the life of the application.  This is where thread-
+            //             safety really comes into play -- can be accessed across requests
             services.AddSingleton<IOperationSingleton, Operation>();
 
 

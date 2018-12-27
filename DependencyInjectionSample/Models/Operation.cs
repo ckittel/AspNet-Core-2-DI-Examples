@@ -11,17 +11,17 @@ namespace DependencyInjectionSample.Models
         public Operation(ILogger<Operation> logger, Guid id)
         {
             logger.LogInformation("Being constructed with Operation ID {OperationId}", id);
-            OperationId = id;
+            Id = id;
         }
 
-        public Guid OperationId { get; }
+        public Guid Id { get; }
     }
 
     #region  Interfaces 
 
     public interface IOperation
     {
-        Guid OperationId { get; }
+        Guid Id { get; }
     }
 
     public interface IOperationTransient : IOperation

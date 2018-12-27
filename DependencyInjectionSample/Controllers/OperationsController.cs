@@ -30,7 +30,7 @@ namespace DependencyInjectionSample.Controllers
             //_operationService2 = operationService2;
         }
 
-        // GET api/values
+        // GET api/operations
         [HttpGet]
         //[AddGuidHeader]
         //[TypeFilter(typeof(AddGuidHeaderAttribute), Arguments = new object[] {"X-YetAnotherAwesomeGuid"})]
