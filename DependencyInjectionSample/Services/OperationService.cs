@@ -1,4 +1,4 @@
-using DependencyInjectionSample.Interfaces;
+using DependencyInjectionSample.Models;
 
 namespace DependencyInjectionSample.Services
 {

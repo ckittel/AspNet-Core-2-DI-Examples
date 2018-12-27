@@ -1,7 +1,6 @@
 using System;
 using DependencyInjectionSample.Filters;
 using DependencyInjectionSample.HttpClients;
-using DependencyInjectionSample.Interfaces;
 using DependencyInjectionSample.Models;
 using DependencyInjectionSample.Services;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,13 +19,15 @@ namespace DependencyInjectionSample
 
             // Singleton - The first time an IOperationSingleton is needed, a new on will be
             //             created.  Future needs will be handled by the same instance.  This
-            //             is a singleton for the life of the application.
+            //             is a singleton for the life of the application.  This is where thread
+            //             safty really comes into play -- can be accessed across requests
             services.AddSingleton<IOperationSingleton, Operation>();
 
 
             // Scoped - The first time an IOperationScoped is needed within an http request, a new
-            //          one will be created.  Future needs will be handed the same instance.  Can
-            //          think of this as a "singleton within the scope of an HttpRequest
+            //          one will be created.  Future needs within the same request will be handed
+            //          the same instance.  Can think of this as a "singleton within the scope of
+            //          an HttpRequest"
             services.AddScoped<IOperationScoped, Operation>();
 
 
